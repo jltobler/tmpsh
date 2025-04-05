@@ -1,0 +1,7 @@
+#!/bin/sh
+
+export TMP=$(mktemp -d --tmpdir tmpsh.XXX) &&
+trap 'rm -rf "$TMP"' EXIT &&
+
+cd "$TMP" && 
+${SHELL:-/bin/sh}
